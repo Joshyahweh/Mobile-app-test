@@ -20,8 +20,6 @@
     }
   },
   "submit": {
-    "production": {
-      "releaseChannel": "default"
-    }
+    "production": {}
   }
 }
