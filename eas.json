@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 9.1.0"
+    "version": ">= 9.1.0",
+    "requireCommit": true
   },
   "build": {
     "development": {
@@ -10,9 +11,17 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "distribution": "store",
+      "env": {
+        "AUTH_API_URL": "http://5.39.81.217:8988/api/v1/public/linguere/auth/editeur/seconnecter",
+        "ENTREPRISE_API_URL": "http://5.39.81.217:8988/api/v1/linguere/recrutement/react/entreprise"
+      }
+    }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "releaseChannel": "default"
+    }
   }
 }

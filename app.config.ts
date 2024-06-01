@@ -9,6 +9,22 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   extra: {
     authApiUrl: process.env.AUTH_API_URL,
     entrepriseApiUrl: process.env.ENTREPRISE_API_URL,
-    geolocalisationBaseUrl: process.env.GEOLOCALISATION_BASE_URL
+    geolocalisationBaseUrl: process.env.GEOLOCALISATION_BASE_URL,
+    eas: {
+      projectId: "fc7e8044-c633-4217-85a8-76f7f20c632f",
+    },
+  },
+  android: {
+    package: "com.EnetAfrica.mobileAppTest",
+  },
+  ios: {
+    bundleIdentifier: "com.EnetAfrica.mobileAppTest",
+  },
+
+  updates: {
+    url: "https://u.expo.dev/fc7e8044-c633-4217-85a8-76f7f20c632f",
+  },
+  runtimeVersion: {
+    policy: "appVersion",
   },
 });
