@@ -7,9 +7,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   version: "1.0.0",
   scheme: "mobile-app-test",
   extra: {
-    authApiUrl: process.env.AUTH_API_URL,
-    entrepriseApiUrl: process.env.ENTREPRISE_API_URL,
-    geolocalisationBaseUrl: process.env.GEOLOCALISATION_BASE_URL,
+    authApiUrl: process.env.EXPO_AUTH_API_URL,
+    entrepriseApiUrl: process.env.EXPO_ENTREPRISE_API_URL,
     eas: {
       projectId: "fc7e8044-c633-4217-85a8-76f7f20c632f",
     },
