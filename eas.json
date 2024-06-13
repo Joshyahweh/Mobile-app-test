@@ -15,10 +15,6 @@
     },
     "production": {
       "distribution": "store",
-      "env": {
-        "EXPO_AUTH_API_URL": "http://5.39.81.217:8988/api/v1/public/linguere/auth/editeur/seconnecter",
-        "EXPO_ENTREPRISE_API_URL": "http://5.39.81.217:8988/api/v1/linguere/recrutement/react/entreprise"
-      },
       "channel": "production"
     }
   },
