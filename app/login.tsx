@@ -61,10 +61,23 @@ const LoginScreen: React.FC = () => {
           console.error("Invalid response data:", data);
         }
       } else {
-        Alert.alert("Login Failed", "Invalid email or password.");
+        const errorText = await response.text();
+        Alert.alert("Login Failed", `Error: ${response.status} ${response.statusText}\n\n${errorText}`);
       }
     } catch (error) {
-      Alert.alert("Login Error", `${error}`);
+      let errorMessage = "An unknown error occurred";
+      let errorStack = "";
+
+      if (error instanceof Error) {
+        errorMessage = error.message;
+        errorStack = error.stack || "";
+      } else {
+        errorMessage = JSON.stringify(error);
+      }
+
+      const fullError = `${errorMessage}\n\nStack Trace:\n${errorStack}`;
+      Alert.alert("Login Error", fullError);
+      console.error(fullError); // Log the full error for debugging
     }
   };
 
