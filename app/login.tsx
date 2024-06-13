@@ -51,7 +51,7 @@ const LoginScreen: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        
+
         if (data.token && data.user.id) {
           signIn({ token: data.token, userId: data.user.id.toString() });
           Alert.alert("Login Successful", `Welcome, ${data.user.nom}!`);
@@ -64,8 +64,7 @@ const LoginScreen: React.FC = () => {
         Alert.alert("Login Failed", "Invalid email or password.");
       }
     } catch (error) {
-      Alert.alert("Login Error", "An error occurred. Please try again.");
-     
+      Alert.alert("Login Error", `${error}`);
     }
   };
 
